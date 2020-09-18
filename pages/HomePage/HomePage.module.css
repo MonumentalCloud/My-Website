@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  display: flex;
+}
+.left {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background-clip: content-box;
+}
+.right {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background: #d43109;
+}
+.myName {
+  font-family: Helvetica Neue;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  cursor: pointer;
+}
+.big {
+  height: 100%;
+}
+.menu {
+  font-family: Helvetica-Neue;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  cursor: pointer;
+}
+.menuItems {
+  cursor: pointer;
+  font-size: 1em;
+}

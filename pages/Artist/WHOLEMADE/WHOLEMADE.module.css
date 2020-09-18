@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+}
+.top {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.myName {
+  font-family: Helvetica Neue;
+  color: whitesmoke;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.artist {
+  position: absolute;
+  left: 1rem;
+  top: 3em;
+  cursor: pointer;
+  color: black;
+}
+.gallery {
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url("/Artist/MJ-1.jpg");
+}

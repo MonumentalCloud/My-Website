@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  flex-direction: row;
+  display: flex;
+}
+.left {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  background: #d43109;
+}
+.middle {
+  position: absolute;
+  width: 33.33%;
+  height: 100%;
+  align-self: center;
+  z-index: 1;
+  background: white;
+}
+.right {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
