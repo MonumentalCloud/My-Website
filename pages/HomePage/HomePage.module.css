@@ -1,6 +1,7 @@
 .container {
   height: 100%;
   display: flex;
+  background-color: wheat;
 }
 .left {
   position: relative;
@@ -26,10 +27,10 @@
   height: 100%;
 }
 .menu {
-  font-family: Helvetica-Neue;
+  font-family: Helvetica Neue;
   color: black;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 1rem;
   cursor: pointer;
 }

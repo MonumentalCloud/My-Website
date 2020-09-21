@@ -62,7 +62,7 @@ export default function WHOLEMADE(props) {
       </motion.div>
       <motion.div
         className={styles.gallery}
-        initial={{ left: "50vw" }}
+        initial={{ top: "150vw" }}
         exit={{
           left: "50vw",
           top: "0vh",

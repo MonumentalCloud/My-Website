@@ -2,26 +2,29 @@
   height: 100%;
   flex-direction: row;
   display: flex;
+  background: wheat;
 }
 .left {
   position: relative;
   height: 100%;
   overflow: hidden;
   z-index: 1;
-  background: #d43109;
+  background: wheat;
 }
-.middle {
-  position: absolute;
-  width: 33.33%;
-  height: 100%;
-  align-self: center;
-  z-index: 1;
-  background: white;
-}
+
 .right {
   position: relative;
   width: 50%;
   height: 100%;
   overflow: hidden;
   background: url("/Artist/MJ-1.jpg");
+}
+.myName {
+  font-family: Helvetica Neue;
+  color: black;
+  position: absolute;
+  left: 1rem;
+  cursor: pointer;
+}
+.gallery {
 }
