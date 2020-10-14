@@ -7,7 +7,7 @@ import Menu from "../../components/Menu/Menu.js";
 import Gallery from "../../components/Gallery/Gallery";
 import styles from "./HomePage.module.css";
 
-const hats = ["Artist", "Programmer", "Designer"];
+const hats = ["Artist", "Programmer", "Designer", "About"];
 const carousel = [
   { id: 0, url: "/MainPage/mainview.png" },
   { id: 1, url: "/MainPage/untitled.png" },
@@ -26,7 +26,7 @@ export default function HomePage(props) {
   props.setPrevious(0);
 
   return (
-    <div className={styles.container}>
+    <motion.div className={styles.container}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -38,18 +38,23 @@ export default function HomePage(props) {
       </motion.div>
       <motion.div
         initial={{ x: "-100vw" }}
-        animate={{ x: "0vw" }}
-        exit={{ x: "-100vw" }}
+        animate={{ x: "0vw", width: "50%" }}
+        exit={{ width: "100%", x: "-33vw" }}
         transition={props.pageTransition}
         className={styles.right}
       >
-        <h2 onClick={() => setToggle(!isToggle)} className={styles.myName}>
+        <motion.h2
+          exit={{ left: "0.5em", top: "0.5em", position: "absolute" }}
+          transition={props.pageTransition}
+          onClick={() => setToggle(!isToggle)}
+          className={styles.myName}
+        >
           Marvin Lee
-        </h2>
+        </motion.h2>
         <div className={styles.menu}>
           <Menu list={hats} isToggle={isToggle} />
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

@@ -3,7 +3,8 @@
   display: flex;
   padding: 3em;
   background-color: #d43109;
-  min-height: 100vh;
+  height: 200vh;
+  justify-content: center;
 }
 
 .myName {
@@ -18,18 +19,32 @@
 }
 
 .main {
-  top: 30vh;
+  display: block;
   position: relative;
+  padding: 7em;
+
+  color: white;
+}
+
+.header {
+  font-style: italic;
+  font-size: 5em;
+  font-family: "EB Garamond", serif;
+  top: 40vh;
+  position: sticky;
 }
 
 .introduction {
-  font-family: HelveticaNeue, sans-serif;
-  font-weight: 40;
+  font-family: Helvetica, sans-serif;
+  font-weight: 900;
   font-size: 1.5em;
   line-height: 1em;
   position: relative;
+  top: 60vh;
   left: 0.5em;
-
-  z-index: 1;
   width: 70vw;
+  z-index: 1;
+  margin-top: 10em;
+  margin-bottom: 10em;
+  color: white;
 }

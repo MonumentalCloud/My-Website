@@ -1,7 +1,8 @@
 .container {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  background-color: wheat;
+  background-color: #d43109;
 }
 .left {
   position: relative;
@@ -12,7 +13,7 @@
 .right {
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 50vw;
   background: #d43109;
 }
 .myName {

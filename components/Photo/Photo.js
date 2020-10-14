@@ -10,7 +10,7 @@ const trans = (x, y, s) => `translate(${y}px,${x}px) scale(${s})`;
 
 export default function Photos(props) {
   const [rotate, set] = useSpring(() => ({
-    xys: [0, 0, 1.3],
+    xys: [0, 0, 1.5],
     config: { mass: 5, tension: 350, friction: 70 },
   }));
 
@@ -21,7 +21,7 @@ export default function Photos(props) {
         set({ xys: calc(x, y) });
       }}
       onMouseLeave={() => {
-        set({ xys: [0, 0, 1.5] });
+        set({ xys: [0, 0, 1.7] });
       }}
       style={{
         transform: rotate.xys.interpolate((x, y, s) => trans(x, y, s)),

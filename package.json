@@ -9,12 +9,17 @@
   },
   "dependencies": {
     "framer-motion": "^2.6.13",
+    "fs": "0.0.1-security",
+    "gray-matter": "^4.0.2",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-intersection-observer": "^8.28.5",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "remark": "^12.0.1",
+    "remark-html": "^13.0.1",
+    "remark-unwrap-images": "^2.0.0"
   }
 }
