@@ -1,32 +1,36 @@
-import {
-  motion,
-  useElementScroll,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
-import Gallery from "../../components/Gallery/Gallery";
 import styles from "./Programmer.module.css";
+import {
+  useViewportScroll,
+  motion,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useRef, useState } from "react";
-import Matrix from "../../components/Matrix/Matrix";
-
-const carousel = [
-  { id: 0, url: "/MainPage/mainview.png" },
-  { id: 1, url: "/MainPage/untitled.png" },
-  { id: 2, url: "/MainPage/coffee front view.jpg" },
-  { id: 3, url: "/MainPage/main.jpg" },
-  { id: 4, url: "/MainPage/Rococo stool.jpg" },
-];
+import { useState, useEffect } from "react";
+import { useTrail } from "react-spring";
 
 export default function Programmer(props) {
-  const [up, setUp] = useState(true);
-  const router = useRouter();
   const depth = 1;
-  const fromUp = depth > props.previous;
+  const [height, setHeight] = useState();
+  useEffect(() => {
+    setHeight(window.innerHeight);
+  });
 
-  const { scrollYProgress, scrollY } = useViewportScroll();
-  const transform = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const { scrollY } = useViewportScroll();
+  const transform = useTransform(scrollY, [0, 500], [0, 1]);
+  const opacity = useTransform(transform, [0, 0.2, 0.4, 1], [1, 1, 0, 0]);
+  const blur = useTransform(
+    transform,
+    [0, 0.2, 0.4, 1],
+    ["blur(0px)", "blur(0px)", "blur(10px)", "blur(10px)"]
+  );
+  const opacity2 = useTransform(transform, [0, 0.5, 0.7, 1], [0, 1, 1, 0]);
+  const blur2 = useTransform(
+    transform,
+    [0, 0.5, 0.7, 1],
+    ["blur(0px)", "blur(0px)", "blur(0px)", "blur(10px)"]
+  );
+  const opacity3 = useTransform(transform, [0, 0.8, 1], [0, 0, 1]);
 
   props.setPrevious(depth);
   return (
@@ -39,20 +43,71 @@ export default function Programmer(props) {
       <Link href="/">
         <motion.h2 className={styles.myName}>Marvin Lee</motion.h2>
       </Link>
-      <motion.h3 className={styles.introduction}>
-        I am an artistically minded Engineer with interest in Machine Learning.
-        I'd love to talk to you about the future and opportunities!
-        <br />
-        <br></br>
-        My skills include
-        <ul>
-          <li>React.js</li>
-          <li>Next.js</li>
-          <li>Tensorflow</li>
-          <li>Sklearn</li>
-          <li>Python3</li>
-        </ul>
-      </motion.h3>
+      <motion.div
+        style={{
+          top: "35vh",
+          position: "sticky",
+          opacity: opacity,
+          filter: blur,
+        }}
+      >
+        <motion.h1 className={styles.header}>
+          <a href="https://github.com/MonumentalCloud" target="_blank">
+            Hello there!
+          </a>
+        </motion.h1>
+        <motion.h3 className={styles.introduction}>
+          I am a team oriented engineer with interest in Machine Learning and
+          Fintech. I'd love to talk to you about the future!
+        </motion.h3>
+      </motion.div>
+      <motion.div
+        style={{
+          top: "35vh",
+          position: "sticky",
+          opacity: opacity2,
+          filter: blur2,
+        }}
+      >
+        <motion.h1 className={styles.header}>
+          <a
+            href="https://github.com/MonumentalCloud/My-Website"
+            target="_blank"
+          >
+            Web Dev
+          </a>
+        </motion.h1>
+
+        <motion.h3 className={styles.introduction} style={{ top: "100vh" }}>
+          I bring my expertise in art and design to web app development,
+          utilizing <span>React.js</span>, <span>Next.js</span>, and{" "}
+          <span>React Native</span>
+        </motion.h3>
+      </motion.div>
+      <motion.div
+        style={{ top: "35vh", position: "sticky", opacity: opacity3 }}
+      >
+        <motion.h1 className={styles.header}>
+          <a
+            href="https://github.com/MonumentalCloud/Pradanator"
+            target="_blank"
+          >
+            Machine Learning
+          </a>
+        </motion.h1>
+        <motion.h3 className={styles.introduction} style={{ top: "150vh" }}>
+          I also love working with images in Machine Learning. I have experience
+          in RNN and CNN, and currently learing about a Reinforcement Learning.
+          My tool of choice is Tensorflow, but I also have some experience in
+          SciKit learn.
+        </motion.h3>
+      </motion.div>
+      <style jsx>{`
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      `}</style>
     </motion.div>
   );
 }

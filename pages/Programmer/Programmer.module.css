@@ -3,7 +3,7 @@
   display: flex;
   padding: 3em;
   background-color: #d43109;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .myName {
@@ -17,19 +17,26 @@
   cursor: pointer;
 }
 
-.main {
-  top: 30vh;
-  position: relative;
+.header {
+  font-style: italic;
+  font-size: 5em;
+  font-family: "EB Garamond", serif;
+
+  position: sticky;
+  display: block;
 }
 
 .introduction {
-  font-family: HelveticaNeue, sans-serif;
-  font-weight: 40;
+  display: block;
+  font-family: Helvetica, sans-serif;
+  font-weight: 900;
   font-size: 1.5em;
   line-height: 1em;
-  position: relative;
   left: 0.5em;
-
-  z-index: 1;
   width: 70vw;
+  z-index: 1;
+
+  margin-bottom: 10em;
+  color: white;
+  scroll-snap-type: inline mandatory;
 }

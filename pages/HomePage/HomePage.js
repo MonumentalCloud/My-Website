@@ -7,7 +7,7 @@ import Menu from "../../components/Menu/Menu.js";
 import Gallery from "../../components/Gallery/Gallery";
 import styles from "./HomePage.module.css";
 
-const hats = ["Artist", "Programmer", "Designer", "About"];
+const hats = ["Artist", "Programmer", "Designer"];
 const carousel = [
   { id: 0, url: "/MainPage/mainview.png" },
   { id: 1, url: "/MainPage/untitled.png" },
