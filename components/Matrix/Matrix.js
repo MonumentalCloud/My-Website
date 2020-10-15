@@ -119,6 +119,7 @@ export default function Matrix(props) {
               animate="animate"
               whileHover="hover"
               whileTap="hover"
+              onclick="hover"
               animate={controls}
               variants={transition}
               transition={props.pageTransition}
