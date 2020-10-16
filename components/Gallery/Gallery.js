@@ -12,6 +12,7 @@ export default function Gallery(props) {
     leave: { opacity: 0 },
     config: { friction: 50 },
   });
+  const vertical = props.vertical;
   useEffect(
     () =>
       void setInterval(() => set((state) => (state + 1) % slide.length), 4000),
@@ -21,7 +22,7 @@ export default function Gallery(props) {
   return transition.map(({ item, props, key }) => {
     return (
       <animated.div className={styles.gallery} key={key} style={props}>
-        <Photos src={item.url} />
+        <Photos src={item.url} vertical={vertical} />
       </animated.div>
     );
   });

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useSpring, animated, config } from "react-spring";
 //import styles from "./HomePage.module.css";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import Menu from "../../components/Menu/Menu.js";
 import Gallery from "../../components/Gallery/Gallery";
 import styles from "./HomePage.module.css";
@@ -18,6 +18,7 @@ const carousel = [
 
 export default function HomePage(props) {
   const [isToggle, setToggle] = useState(false);
+  const [vertical, setVertical] = useState(false);
   const fadeIn = useSpring({
     from: { opacity: 0 },
     opacity: 1,
@@ -25,35 +26,64 @@ export default function HomePage(props) {
   });
   props.setPrevious(0);
 
+  useLayoutEffect(() => {
+    const tell = () => {
+      if (window.innerHeight >= window.innerWidth) {
+        setVertical(true);
+      } else {
+        setVertical(false);
+      }
+    };
+
+    tell();
+
+    window.addEventListener("resize", tell);
+  });
+
+  console.log(vertical);
+
   return (
-    <motion.div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      style={{ flexDirection: vertical ? "column" : "row" }}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={props.pageTransition}
         className={styles.left}
+        style={{
+          height: vertical ? "50vh" : "100vh",
+          width: vertical ? "100vw" : "50vw",
+        }}
       >
-        <Gallery list={carousel} />
+        <Gallery list={carousel} vertical={vertical} />
       </motion.div>
       <motion.div
         initial={{ x: "-100vw" }}
-        animate={{ x: "0vw", width: "50%" }}
+        animate={{ x: "0vw", width: vertical ? "100vw" : "50vw" }}
         exit={{ width: "100%", x: "-33vw" }}
         transition={props.pageTransition}
         className={styles.right}
+        style={{
+          height: vertical ? "50vh" : "100vh",
+          width: vertical ? "100vw" : "50vw",
+        }}
       >
-        <motion.h2
-          exit={{ left: "0.5em", top: "0.5em", position: "absolute" }}
-          transition={props.pageTransition}
-          onClick={() => setToggle(!isToggle)}
-          className={styles.myName}
-        >
-          Marvin Lee
-        </motion.h2>
-        <div className={styles.menu}>
-          <Menu list={hats} isToggle={isToggle} />
-        </div>
+        <motion.div className={styles.big}>
+          <motion.h2
+            exit={{ left: "0.5em", top: "0.5em", position: "absolute" }}
+            transition={props.pageTransition}
+            onClick={() => setToggle(!isToggle)}
+            className={styles.myName}
+          >
+            Marvin Lee
+          </motion.h2>
+          <div className={styles.menu}>
+            <Menu list={hats} isToggle={isToggle} />
+          </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

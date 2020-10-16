@@ -1,7 +1,9 @@
 .gallery {
   position: absolute;
+
+  object-fit: contain;
+  object-position: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  contain: content;
 }

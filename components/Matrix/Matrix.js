@@ -89,6 +89,23 @@ export default function Matrix(props) {
             whileHover="hover"
             whileTap="hover"
           >
+            <motion.div
+              style={{
+                backgroundSize: "cover",
+                backgroundImage: `url("${item.image}")`,
+                backgroundPosition: "center",
+                width: "100%",
+                maxHeight: "100%",
+              }}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              whileTap="hover"
+              onclick="hover"
+              animate={controls}
+              variants={transition}
+              transition={props.pageTransition}
+            />
             <motion.h3
               className={styles.title}
               initial="rest"
@@ -111,20 +128,6 @@ export default function Matrix(props) {
                 Discover
               </motion.h3>
             </Link>
-            <motion.img
-              src={item.image}
-              width="100%"
-              height="100%"
-              initial="initial"
-              animate="animate"
-              whileHover="hover"
-              whileTap="hover"
-              onclick="hover"
-              animate={controls}
-              variants={transition}
-              transition={props.pageTransition}
-              style={{ objectFit: "cover" }}
-            />
           </motion.div>
         );
       })}
