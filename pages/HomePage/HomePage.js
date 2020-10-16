@@ -63,7 +63,7 @@ export default function HomePage(props) {
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: "0vw", width: vertical ? "100vw" : "50vw" }}
-        exit={{ width: "100%", x: "-33vw" }}
+        exit={{ width: "100%", x: "-43vw" }}
         transition={props.pageTransition}
         className={styles.right}
         style={{
@@ -71,18 +71,21 @@ export default function HomePage(props) {
           width: vertical ? "100vw" : "50vw",
         }}
       >
-        <motion.div className={styles.big}>
+        <motion.div
+          className={styles.big}
+          transition={props.pageTransition}
+          exit={{ left: "0.5em", top: "1em" }}
+        >
           <motion.h2
-            exit={{ left: "0.5em", top: "0.5em", position: "absolute" }}
             transition={props.pageTransition}
             onClick={() => setToggle(!isToggle)}
             className={styles.myName}
           >
             Marvin Lee
           </motion.h2>
-          <div className={styles.menu}>
+          <motion.div className={styles.menu} exit={{ opacity: 0 }}>
             <Menu list={hats} isToggle={isToggle} />
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>
