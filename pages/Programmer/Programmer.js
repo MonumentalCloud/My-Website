@@ -35,10 +35,13 @@ export default function Programmer(props) {
   props.setPrevious(depth);
   return (
     <motion.div exit={{ opacity: 0 }} className={styles.container}>
-      <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"
-        rel="stylesheet"
-      ></link>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"
+          rel="stylesheet"
+        ></link>
+        <title>Marvin Lee</title>
+      </Head>
 
       <Link href="/">
         <motion.h2 className={styles.myName}>Marvin Lee</motion.h2>
@@ -46,25 +49,17 @@ export default function Programmer(props) {
       <motion.div className={styles.invisible} ref={ref}></motion.div>
 
       <motion.div
+        initial={{ opacity: 0 }}
         animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ staggerChildren: 0.5, ...props.pageTransition }}
+        transition={props.pageTransition}
         className={styles.bigbag}
       >
-        <motion.h1
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          style={{ y: first }}
-          className={styles.header}
-        >
+        <motion.h1 style={{ y: first }} className={styles.header}>
           <a href="https://github.com/MonumentalCloud" target="_blank">
             Hello there!
           </a>
         </motion.h1>
-        <motion.h3
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          className={styles.introduction}
-        >
+        <motion.h3 className={styles.introduction}>
           I am a artistically-minded engineer with interest in Machine Learning
           and Fintech. I'd love to talk to you about the future!
         </motion.h3>
@@ -74,22 +69,13 @@ export default function Programmer(props) {
         />
         <motion.img
           className={styles.logos}
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
           src="/Programmer/5848152fcef1014c0b5e4967.png"
         />
         <motion.img
           className={styles.logos}
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
           src="/Programmer/logo-javascript-logo-png-transparent.png"
         />
-        <motion.img
-          className={styles.logos}
-          initial={{ x: 200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          src="/Programmer/lockup.svg"
-        />
+        <motion.img className={styles.logos} src="/Programmer/lockup.svg" />
       </motion.div>
       <motion.div className={styles.invisible} ref={ref2}></motion.div>
       <motion.div

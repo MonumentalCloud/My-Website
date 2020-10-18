@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 import styles from "./[id].module.css";
 import { useInView } from "react-intersection-observer";
 import { getAllPostIds, getPostData } from "../../../lib/posts.js";
@@ -28,10 +29,14 @@ export default function props({ finalData }) {
 
   return (
     <motion.div exit={{ opacity: 0 }} className={styles.container}>
-      <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"
-        rel="stylesheet"
-      ></link>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"
+          rel="stylesheet"
+        ></link>
+        <title>Marvin Lee</title>
+      </Head>
+
       <Link href="/">
         <motion.h2 className={styles.myName}>Marvin Lee</motion.h2>
       </Link>

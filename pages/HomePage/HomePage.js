@@ -45,9 +45,11 @@ export default function HomePage(props) {
   return (
     <motion.div
       className={styles.container}
-      exit={{ opacity: 1 }}
       style={{ flexDirection: vertical ? "column" : "row" }}
     >
+      <Head>
+        <title>Marvin Lee</title>
+      </Head>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -58,6 +60,7 @@ export default function HomePage(props) {
           height: vertical ? "50vh" : "100vh",
           width: vertical ? "100vw" : "50vw",
         }}
+        onClick={() => setToggle(!isToggle)}
       >
         <Gallery list={carousel} vertical={vertical} />
       </motion.div>
@@ -84,7 +87,6 @@ export default function HomePage(props) {
             transition={props.pageTransition}
             onClick={() => setToggle(!isToggle)}
             className={styles.myName}
-            exit={{ opacity: 1 }}
           >
             Marvin Lee
           </motion.h2>

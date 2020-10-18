@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./Artist.module.css";
 import Link from "next/link";
-
+import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import Matrix from "../../components/Matrix/Matrix";
 import { getSortedPostsData } from "../../lib/posts";
@@ -21,6 +21,13 @@ export default function Artist({ allPostsData, ...props }) {
 
   return (
     <motion.div exit={{ opacity: 0 }} className={styles.container}>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"
+          rel="stylesheet"
+        ></link>
+        <title>Marvin Lee</title>
+      </Head>
       <motion.div className={styles.top}>
         <Link href="/">
           <motion.h2 className={styles.myName}>Marvin Lee</motion.h2>
