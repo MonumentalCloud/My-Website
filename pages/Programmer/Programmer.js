@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useTrail } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 export default function Programmer(props) {
   const depth = 1;
@@ -16,21 +16,21 @@ export default function Programmer(props) {
     setHeight(window.innerHeight);
   });
 
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.8,
+  });
+  const [ref2, inView2] = useInView({
+    triggerOnce: false,
+    threshold: 0.8,
+  });
+  const [ref3, inView3] = useInView({
+    triggerOnce: false,
+    threshold: 0.8,
+  });
   const { scrollY } = useViewportScroll();
   const transform = useTransform(scrollY, [0, height], [0, 100]);
-  const opacity = useTransform(transform, [0, 20, 40, 100], [1, 1, 0, 0]);
-  const blur = useTransform(
-    transform,
-    [0, 30, 40, 100],
-    ["blur(0px)", "blur(0px)", "blur(10px)", "blur(10px)"]
-  );
-  const opacity2 = useTransform(transform, [0, 50, 70, 100], [0, 1, 1, 0]);
-  const blur2 = useTransform(
-    transform,
-    [0, 60, 70, 100],
-    ["blur(0px)", "blur(0px)", "blur(0px)", "blur(10px)"]
-  );
-  const opacity3 = useTransform(transform, [0, 80, 100], [0, 0, 1]);
+  const first = useTransform(transform, [0, 100], [0, -100]);
 
   props.setPrevious(depth);
   return (
@@ -43,19 +43,17 @@ export default function Programmer(props) {
       <Link href="/">
         <motion.h2 className={styles.myName}>Marvin Lee</motion.h2>
       </Link>
+      <motion.div className={styles.invisible} ref={ref}></motion.div>
+
       <motion.div
-        style={{
-          opacity: opacity,
-          filter: blur,
-        }}
-        initial={{ x: 200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        animate={{ opacity: inView ? 1 : 0 }}
         transition={{ staggerChildren: 0.5, ...props.pageTransition }}
         className={styles.bigbag}
       >
         <motion.h1
           initial={{ x: 200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
+          style={{ y: first }}
           className={styles.header}
         >
           <a href="https://github.com/MonumentalCloud" target="_blank">
@@ -93,11 +91,9 @@ export default function Programmer(props) {
           src="/Programmer/lockup.svg"
         />
       </motion.div>
+      <motion.div className={styles.invisible} ref={ref2}></motion.div>
       <motion.div
-        style={{
-          opacity: opacity2,
-          filter: blur2,
-        }}
+        animate={{ opacity: inView2 ? 1 : 0 }}
         className={styles.bigbag}
       >
         <motion.h1 className={styles.header}>
@@ -116,7 +112,11 @@ export default function Programmer(props) {
           <span>React Native</span>, to create highly scalable backend systems.
         </motion.h3>
       </motion.div>
-      <motion.div style={{ opacity: opacity3 }} className={styles.bigbag}>
+      <motion.div className={styles.invisible} ref={ref3}></motion.div>
+      <motion.div
+        className={styles.bigbag}
+        animate={{ opacity: inView3 ? 1 : 0 }}
+      >
         <motion.h1 className={styles.header}>
           <a
             href="https://github.com/MonumentalCloud/Pradanator"
@@ -132,13 +132,21 @@ export default function Programmer(props) {
           SciKit learn.
         </motion.h3>
       </motion.div>
-      <motion.div className={styles.bigbag} style={{ top: "70vh" }}>
-        <div
-          whileTap={{ scale: 2, rotateZ: 180 }}
+      <motion.div
+        className={styles.bigbag}
+        animate={{
+          x: [0, 5, -5, 0],
+          transition: { type: "spring", repeat: Infinity, repeatDelay: 1 },
+        }}
+      >
+        <a
+          href="https://github.com/MonumentalCloud"
           className={styles.introduction}
+          style={{ borderBottom: "none", color: "white" }}
+          target="_blank"
         >
           Check out my Github!
-        </div>
+        </a>
       </motion.div>
       <style jsx>{`
         a {

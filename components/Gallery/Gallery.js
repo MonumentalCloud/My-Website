@@ -2,6 +2,7 @@ import Photos from "../Photo/Photo";
 import styles from "./Gallery.module.css";
 import { useTransition, config, animated } from "react-spring";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Gallery(props) {
   const slide = props.list;
@@ -21,9 +22,11 @@ export default function Gallery(props) {
 
   return transition.map(({ item, props, key }) => {
     return (
-      <animated.div className={styles.gallery} key={key} style={props}>
-        <Photos src={item.url} vertical={vertical} />
-      </animated.div>
+      <motion.div exit={{ opacity: 0 }}>
+        <animated.div className={styles.gallery} key={key} style={props}>
+          <Photos src={item.url} vertical={vertical} />
+        </animated.div>
+      </motion.div>
     );
   });
 }

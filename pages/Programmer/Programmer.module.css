@@ -3,7 +3,6 @@
   display: flex;
   padding: 3em;
   background-color: #d43109;
-  height: 100%;
   width: 100vw;
 }
 
@@ -19,10 +18,10 @@
 }
 
 .bigbag {
-  top: 35vh;
+  top: 25vh;
   position: sticky;
-  overflow: hidden;
-  margin-bottom: 15em;
+
+  margin-bottom: 50vh;
   align-items: center;
 }
 
@@ -53,4 +52,10 @@
   background-position: center;
   width: 130px;
   margin: 2em;
+}
+.invisible {
+  opacity: 1;
+  width: 1px;
+  height: 1px;
+  position: relative;
 }
