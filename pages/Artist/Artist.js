@@ -1,13 +1,8 @@
-import {
-  motion,
-  useElementScroll,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import styles from "./Artist.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import Matrix from "../../components/Matrix/Matrix";
 import { getSortedPostsData } from "../../lib/posts";
 
@@ -46,6 +41,7 @@ export default function Artist({ allPostsData, ...props }) {
 
 export async function getStaticProps() {
   const allPostsData = JSON.stringify(getSortedPostsData("Artist"));
+
   return {
     props: { allPostsData },
   };

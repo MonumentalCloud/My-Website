@@ -48,3 +48,19 @@
   justify-self: center;
   z-index: 1;
 }
+
+.arrows {
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  top: 90vh;
+  z-index: 3;
+}
+
+.arrows path {
+  justify-self: center;
+  fill: transparent;
+  stroke: white;
+  stroke-width: 0.3em;
+}

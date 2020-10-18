@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import styles from "./Matrix.module.css";
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
+import props from "../../pages/Designer/post/[id]";
 
 const Transitions = [
   {
@@ -65,7 +66,17 @@ export default function Matrix(props) {
   const controls = useAnimation();
   const [ref, inView, entry] = useInView({
     triggerOnce: true,
-    rootMargin: "-200px",
+    threshold: 0.1,
+  });
+  const [isMobile, setIsMobile] = useState();
+
+  useEffect(() => {
+    let isMobileView = Boolean(
+      navigator.userAgent.match(
+        /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+      )
+    );
+    setIsMobile(isMobileView);
   });
 
   useEffect(() => {
@@ -108,6 +119,7 @@ export default function Matrix(props) {
             <motion.h3
               className={styles.title}
               initial="rest"
+              animate={isMobile ? "hover" : ""}
               variants={contentTransition}
             >
               {item.title}
@@ -115,12 +127,14 @@ export default function Matrix(props) {
             <motion.hr
               width="70%"
               initial="rest"
+              animate={isMobile ? "hover" : ""}
               variants={contentTransition}
               className={styles.horizontal}
             ></motion.hr>
             <Link href={`/${props.directory}/post/${item.id}`}>
               <motion.h3
                 initial="rest"
+                animate={isMobile ? "hover" : ""}
                 variants={contentTransition}
                 className={styles.overlay}
               >

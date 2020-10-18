@@ -30,8 +30,7 @@
 .mainImage {
   position: relative;
   display: flex;
-  min-width: 50vw;
-  max-width: 50vw;
+  width: 50vw;
   height: 100vh;
   left: 25vw;
   background-size: contain;
@@ -48,4 +47,20 @@
   justify-content: center;
   justify-self: center;
   z-index: 1;
+}
+
+.arrows {
+  position: absolute;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  top: 90vh;
+  z-index: 3;
+}
+
+.arrows path {
+  justify-self: center;
+  fill: transparent;
+  stroke: white;
+  stroke-width: 0.3em;
 }

@@ -4,6 +4,7 @@
   padding: 3em;
   background-color: #d43109;
   height: 100%;
+  width: 100vw;
 }
 
 .myName {
@@ -39,4 +40,10 @@
   margin-bottom: 10em;
   color: white;
   scroll-snap-type: inline mandatory;
+}
+
+.logos {
+  background-size: contain;
+  background-position: center;
+  width: 100%;
 }

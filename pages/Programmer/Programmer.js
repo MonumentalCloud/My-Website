@@ -49,6 +49,7 @@ export default function Programmer(props) {
           position: "sticky",
           opacity: opacity,
           filter: blur,
+          overflow: "cover",
         }}
       >
         <motion.h1 className={styles.header}>
@@ -60,6 +61,12 @@ export default function Programmer(props) {
           I am a team oriented engineer with interest in Machine Learning and
           Fintech. I'd love to talk to you about the future!
         </motion.h3>
+        <motion.div
+          className={styles.logos}
+          style={{
+            backgroundImage: `url("/Programmer/590-5903330_reactjs-logo-react-js-transparent-icon-hd-png.png")`,
+          }}
+        />
       </motion.div>
       <motion.div
         style={{

@@ -41,6 +41,15 @@ export default function props({ finalData }) {
       >
         {data.data.title}
       </motion.h3>
+      <motion.svg
+        className={styles.arrows}
+        animate={{ y: [0, -10.25, 0], transition: { repeat: Infinity } }}
+        style={{ opacity: intro }}
+        width="100"
+        height="100"
+      >
+        <path class="a1" d="M20 0 L50 35 L80 0"></path>
+      </motion.svg>
       <motion.div
         style={{
           background: `url("${data.data.image}")`,

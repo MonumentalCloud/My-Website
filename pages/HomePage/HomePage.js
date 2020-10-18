@@ -74,7 +74,10 @@ export default function HomePage(props) {
         <motion.div
           className={styles.big}
           transition={props.pageTransition}
-          exit={{ left: "0.5em", top: "1em" }}
+          exit={{
+            left: vertical ? "-3em" : "0.5em",
+            top: vertical ? "50%" : "1em",
+          }}
         >
           <motion.h2
             transition={props.pageTransition}
