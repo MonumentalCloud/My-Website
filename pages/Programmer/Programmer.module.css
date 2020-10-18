@@ -18,11 +18,18 @@
   cursor: pointer;
 }
 
+.bigbag {
+  top: 35vh;
+  position: sticky;
+  overflow: hidden;
+  margin-bottom: 15em;
+  align-items: center;
+}
+
 .header {
   font-style: italic;
   font-size: 5em;
   font-family: "EB Garamond", serif;
-
   position: sticky;
   display: block;
 }
@@ -37,7 +44,6 @@
   width: 70vw;
   z-index: 1;
 
-  margin-bottom: 10em;
   color: white;
   scroll-snap-type: inline mandatory;
 }
@@ -45,5 +51,6 @@
 .logos {
   background-size: contain;
   background-position: center;
-  width: 100%;
+  width: 130px;
+  margin: 2em;
 }

@@ -45,6 +45,7 @@ export default function HomePage(props) {
   return (
     <motion.div
       className={styles.container}
+      exit={{ opacity: 1 }}
       style={{ flexDirection: vertical ? "column" : "row" }}
     >
       <motion.div
@@ -83,6 +84,7 @@ export default function HomePage(props) {
             transition={props.pageTransition}
             onClick={() => setToggle(!isToggle)}
             className={styles.myName}
+            exit={{ opacity: 1 }}
           >
             Marvin Lee
           </motion.h2>
