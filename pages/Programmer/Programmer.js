@@ -61,7 +61,7 @@ export default function Programmer(props) {
           </a>
         </motion.h1>
         <motion.h3 className={styles.introduction}>
-          I am a artistically-minded engineer with interest in Machine Learning
+          I am an artistically-minded engineer with interest in Machine Learning
           and Fintech. I'd love to talk to you about the future!
         </motion.h3>
         <motion.img
@@ -88,7 +88,7 @@ export default function Programmer(props) {
             href="https://github.com/MonumentalCloud/My-Website"
             target="_blank"
           >
-            Web Dev
+            Web Development
           </a>
         </motion.h1>
 
@@ -96,7 +96,8 @@ export default function Programmer(props) {
           I bring my expertise in art and design to web app development,
           creating considered and intuitive front-end experiences. I utilize{" "}
           <span>React.js</span>, <span>Next.js</span>, and{" "}
-          <span>React Native</span>, to create highly scalable backend systems.
+          <span>React Native</span>, to creatd integrated and scalable
+          experience.
         </motion.h3>
       </motion.div>
       <motion.div className={styles.invisible} ref={ref3}></motion.div>
