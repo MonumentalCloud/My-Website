@@ -6,6 +6,7 @@ import {
   useMotionTemplate,
 } from "framer-motion";
 import Link from "next/link";
+import Head from "next/head";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 

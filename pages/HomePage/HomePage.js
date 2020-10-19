@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useSpring, animated, config } from "react-spring";
 //import styles from "./HomePage.module.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLayoutEffect, useState } from "react";
 import Menu from "../../components/Menu/Menu.js";
 import Gallery from "../../components/Gallery/Gallery";
@@ -46,11 +46,14 @@ export default function HomePage(props) {
     <motion.div
       className={styles.container}
       style={{ flexDirection: vertical ? "column" : "row" }}
+      key="container"
+      exit={{}}
     >
-      <Head>
+      <Head key="head">
         <title>Marvin Lee</title>
       </Head>
       <motion.div
+        key="left"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -62,7 +65,7 @@ export default function HomePage(props) {
         }}
         onClick={() => setToggle(!isToggle)}
       >
-        <Gallery list={carousel} vertical={vertical} />
+        <Gallery key="gallery" list={carousel} vertical={vertical} />
       </motion.div>
       <motion.div
         initial={{ x: "-100vw" }}
@@ -70,10 +73,12 @@ export default function HomePage(props) {
         exit={{ width: "100%", x: "-43vw" }}
         transition={props.pageTransition}
         className={styles.right}
+        onClick={() => setToggle(!isToggle)}
         style={{
           height: vertical ? "50vh" : "100vh",
           width: vertical ? "100vw" : "50vw",
         }}
+        key="right"
       >
         <motion.div
           className={styles.big}
@@ -82,15 +87,17 @@ export default function HomePage(props) {
             left: vertical ? "-3em" : "0.5em",
             top: vertical ? "50%" : "1em",
           }}
+          key="big"
         >
           <motion.h2
             transition={props.pageTransition}
             onClick={() => setToggle(!isToggle)}
             className={styles.myName}
+            key="myName"
           >
             Marvin Lee
           </motion.h2>
-          <motion.div className={styles.menu} exit={{ opacity: 0 }}>
+          <motion.div key="menu" className={styles.menu} exit={{ opacity: 0 }}>
             <Menu list={hats} isToggle={isToggle} />
           </motion.div>
         </motion.div>

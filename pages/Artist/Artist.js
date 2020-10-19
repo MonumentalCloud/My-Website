@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import styles from "./Artist.module.css";
 import Link from "next/link";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
 import Matrix from "../../components/Matrix/Matrix";
 import { getSortedPostsData } from "../../lib/posts";
 

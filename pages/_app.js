@@ -4,13 +4,12 @@ import { useState } from "react";
 
 const pageTransition = { stiffness: 70, damping: 20, duration: 1 };
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps, router, isVisible }) {
   const [previous, setPrevious] = useState(0);
   return (
     <AnimatePresence exitBeforeEnter>
       <Component
         key={router.route}
-        style={{ height: "100%" }}
         {...pageProps}
         previous={previous}
         setPrevious={setPrevious}
