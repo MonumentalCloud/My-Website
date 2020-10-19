@@ -28,7 +28,11 @@ export default function props({ finalData }) {
   const intro = useTransform(translated, [0, 0.5], [1, 0]);
 
   return (
-    <motion.div exit={{ opacity: 0 }} className={styles.container}>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
+      className={styles.container}
+    >
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&display=swap"

@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 const pageTransition = { stiffness: 70, damping: 20, duration: 1 };
@@ -8,14 +8,14 @@ function MyApp({ Component, pageProps, router, isVisible }) {
   const [previous, setPrevious] = useState(0);
   return (
     <AnimatePresence exitBeforeEnter>
-      <Component
-        key={router.route}
-        {...pageProps}
-        previous={previous}
-        setPrevious={setPrevious}
-        pageTransition={pageTransition}
-      />
-      ;
+      <motion.div key={router.route}>
+        <Component
+          {...pageProps}
+          previous={previous}
+          setPrevious={setPrevious}
+          pageTransition={pageTransition}
+        />
+      </motion.div>
     </AnimatePresence>
   );
 }

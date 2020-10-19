@@ -47,7 +47,7 @@ export default function HomePage(props) {
       className={styles.container}
       style={{ flexDirection: vertical ? "column" : "row" }}
       key="container"
-      exit={{}}
+      exit={{ x: 0 }}
     >
       <Head key="head">
         <title>Marvin Lee</title>
