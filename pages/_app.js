@@ -7,7 +7,7 @@ const pageTransition = { stiffness: 70, damping: 20, duration: 1 };
 function MyApp({ Component, pageProps, router, isVisible }) {
   const [previous, setPrevious] = useState(0);
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
       <motion.div key={router.route}>
         <Component
           {...pageProps}
