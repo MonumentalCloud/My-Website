@@ -70,7 +70,7 @@ export default function HomePage(props) {
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: "0vw", width: vertical ? "100vw" : "50vw" }}
-        exit={{ width: "100%", x: "-100vw" }}
+        exit={{ width: "100%", x: "-43vw" }}
         transition={props.pageTransition}
         className={styles.right}
         onClick={() => setToggle(!isToggle)}

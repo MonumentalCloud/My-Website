@@ -9,7 +9,7 @@
 .myName {
   position: fixed;
   display: flex;
-  font-family: Helvetica Neue;
+  font-family: HelveticaNeue;
   color: whitesmoke;
   left: 0.5em;
   top: 0.5em;
@@ -42,7 +42,7 @@
 .introduction {
   position: absolute;
   display: block;
-  font-family: Helvetica Neue;
+  font-family: HelveticaNeue;
   font-size: 7vmin;
   font-weight: 500;
   top: 100vh;
