@@ -26,11 +26,13 @@
 }
 .menu {
   font-family: HelveticaNeue;
+  font-weight: 100;
   color: black;
   position: relative;
   top: 55%;
   left: 1rem;
   cursor: pointer;
+  border-bottom: none;
 }
 .menuItems {
   cursor: pointer;

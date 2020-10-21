@@ -16,7 +16,7 @@ const beige = "#d0bd95";
 
 export default function props({ finalData }) {
   let data = JSON.parse(finalData);
-  console.log(data.contentHTML);
+
   const [height, setHeight] = useState();
   useEffect(() => {
     setHeight(window.innerHeight);

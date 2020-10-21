@@ -2,10 +2,11 @@ import Head from "next/head";
 import { useSpring, animated, config } from "react-spring";
 //import styles from "./HomePage.module.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 import Menu from "../../components/Menu/Menu.js";
 import Gallery from "../../components/Gallery/Gallery";
 import styles from "./HomePage.module.css";
+import Link from "next/link";
 
 const hats = ["Artist", "Programmer", "Designer"];
 const carousel = [
@@ -26,7 +27,7 @@ export default function HomePage(props) {
   });
   props.setPrevious(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const tell = () => {
       if (window.innerHeight >= window.innerWidth) {
         setVertical(true);
@@ -39,8 +40,6 @@ export default function HomePage(props) {
 
     window.addEventListener("resize", tell);
   });
-
-  console.log(vertical);
 
   return (
     <motion.div
