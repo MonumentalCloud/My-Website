@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import MenuItem from "../MenuItem/MenuItem";
 import { useTrail, animated, config } from "react-spring";
 import { motion } from "framer-motion";
 import Link from "next/link";
