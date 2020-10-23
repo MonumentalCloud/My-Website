@@ -88,7 +88,7 @@ export default function Programmer(props) {
             href="https://github.com/MonumentalCloud/My-Website"
             target="_blank"
           >
-            Web Development
+            Web Dev
           </a>
         </motion.h1>
 
@@ -96,7 +96,7 @@ export default function Programmer(props) {
           I bring my expertise in art and design to web app development,
           creating considered and intuitive front-end experiences. I utilize{" "}
           <span>React.js</span>, <span>Next.js</span>, and{" "}
-          <span>React Native</span>, to creatd integrated and scalable
+          <span>React Native</span>, to create an integrated and scalable
           experience.
         </motion.h3>
       </motion.div>
@@ -114,10 +114,9 @@ export default function Programmer(props) {
           </a>
         </motion.h1>
         <motion.h3 className={styles.introduction} style={{ top: "150vh" }}>
-          I also love working with images in Machine Learning. I have experience
-          in RNN and CNN, and currently learing about a Reinforcement Learning.
-          My tool of choice is Tensorflow, but I also have some experience in
-          SciKit learn.
+          I have experience in RNN and CNN, and currently learing about
+          Reinforcement Learning. My tool of choice is Tensorflow, but I also
+          have some experience in SciKit learn.
         </motion.h3>
       </motion.div>
       <motion.div
