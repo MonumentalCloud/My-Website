@@ -199,7 +199,7 @@ export default function Programmer(props) {
         <motion.div
           className={styles.linkbox}
           variants={transition3}
-          whileHover={{ borderRadius: "10%" }}
+          whileHover={{ borderRadius: "10%", boxShadow: "-10px -10px black" }}
           style={{
             backgroundImage: "url(/Programmer/github_PNG15.png)",
             backgroundColor: "white",
@@ -215,14 +215,14 @@ export default function Programmer(props) {
         <motion.div
           className={styles.linkbox}
           variants={transition3}
-          whileHover={{ borderRadius: "10%" }}
+          whileHover={{ borderRadius: "10%", boxShadow: "-10px -10px black" }}
           style={{
             backgroundImage: `url(/Programmer/LinkedIn-Logo.wine.png)`,
             backgroundColor: "white",
           }}
         >
           <a
-            href="https://linkedin.com/marvin-lee-102302114"
+            href="https://linkedin.com/in/marvin-lee-102302114"
             className={styles.links}
             target="_blank"
           />
