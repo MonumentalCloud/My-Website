@@ -19,9 +19,8 @@
 
 .bigbag {
   top: 25vh;
-  position: sticky;
+  position: fixed;
 
-  margin-bottom: 50vh;
   align-items: center;
 }
 
@@ -31,6 +30,8 @@
   font-family: "EB Garamond", serif;
   position: sticky;
   display: block;
+  text-decoration: none;
+  color: black;
 }
 
 .introduction {
@@ -55,7 +56,35 @@
 }
 .invisible {
   opacity: 1;
+  margin-bottom: 100vh;
   width: 1px;
   height: 1px;
   position: relative;
+}
+
+.linkbox {
+  display: inline-flex;
+  width: 20vmax;
+  height: 20vmax;
+
+  margin: 5vw;
+  background-color: rgb(137, 183, 252);
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  justify-content: center;
+  align-items: baseline;
+  align-self: stretch;
+}
+
+.links {
+  color: white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 200;
+  cursor: pointer;
 }
